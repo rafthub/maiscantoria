@@ -1,0 +1,16 @@
+.DS_Store
+*.DS_Store
+
+# Backups de imagem gerados por otimização (não usados pelo site)
+*.bk.jpg
+*.bk.jpeg
+*.bk.png
+*.bk.webp
+*.bk.gif
+
+# Screenshots de referência (não fazem parte do site)
+home.png
+home_nova.png
+escolas.png
+contato.png
+curriculo.png
