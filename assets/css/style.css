@@ -96,7 +96,7 @@ h3{ font-size:1.6rem; }
   display:flex; align-items:center; gap:.65rem;
   text-decoration:none;
 }
-.brand img{ height:42px; width:auto; display:block; }
+.brand img{ height:85px; width:auto; display:block; }
 .brand__text{
   display:flex; flex-direction:column; line-height:1.15;
 }
@@ -112,8 +112,8 @@ h3{ font-size:1.6rem; }
 
 .nav-toggle{
   display:none;
-  background:none; border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius);
-  padding:.5rem .7rem; cursor:pointer; font-size:1rem; color:#fff;
+  background:none; border:none;
+  padding:.25rem; cursor:pointer; font-size:2rem; line-height:1; color:var(--whatsapp);
 }
 
 .main-nav ul{
@@ -132,17 +132,43 @@ h3{ font-size:1.6rem; }
 }
 
 @media (max-width:760px){
-  .nav-toggle{ display:block; }
+  .brand img{ height:52px; }
+
+  .nav-toggle{ display:block; position:relative; z-index:101; }
+
   .main-nav{
     display:none;
-    position:absolute; left:0; right:0; top:100%;
-    background:var(--navy); border-bottom:1px solid rgba(255,255,255,0.08);
+    position:fixed; inset:0; z-index:90;
+    padding-top:6.5rem;
+    background:rgba(4,7,36,0.8);
+    -webkit-backdrop-filter:blur(24px) saturate(140%);
+    backdrop-filter:blur(24px) saturate(140%);
   }
-  .main-nav.is-open{ display:block; }
+  .main-nav.is-open{
+    display:flex; flex-direction:column; justify-content:space-between;
+    height:100vh; height:100dvh; overflow-y:auto;
+  }
   .main-nav ul{
-    flex-direction:column; gap:0; padding:.5rem 1.5rem 1.25rem;
+    flex-direction:column; gap:0; margin:0; padding:1rem 2rem;
   }
-  .main-nav li{ padding:.6rem 0; border-bottom:1px solid rgba(255,255,255,0.08); }
+  .main-nav li{ border-bottom:1px solid rgba(255,255,255,0.1); }
+  .main-nav a{
+    display:block; padding:1.1rem 0; font-size:1.1rem;
+  }
+
+  .main-nav__footer{
+    padding:1.5rem 2rem 2.5rem; text-align:center;
+    border-top:1px solid rgba(255,255,255,0.1);
+  }
+  .main-nav__footer .social-row{ justify-content:center; margin-top:0; margin-bottom:1.25rem; }
+  .main-nav__copyright{
+    font-family:var(--font-body); font-size:.82rem;
+    color:rgba(233,233,233,0.55); margin:0;
+  }
+}
+
+@media (min-width:761px){
+  .main-nav__footer{ display:none; }
 }
 
 /* ---------- Hero (full-bleed photo background) ---------- */
@@ -223,9 +249,12 @@ h3{ font-size:1.6rem; }
 }
 .section--paper{
   background-color:var(--paper);
-  background-blend-mode:multiply;
   background-size:cover; background-position:center;
   position:relative;
+}
+.section--paper::before{
+  content:""; position:absolute; inset:0;
+  background:var(--paper); opacity:0.9;
 }
 .section--paper > .section-inner{ position:relative; z-index:1; }
 .section--paper > .section-inner{ max-width:var(--max-w); margin:0 auto; padding:4rem 1.5rem; }
@@ -361,6 +390,7 @@ h3{ font-size:1.6rem; }
 
 /* ---------- Curriculo hero variant (with circular portrait) ---------- */
 .hero--curriculo{ min-height:420px; display:flex; align-items:center; }
+.hero--short{ min-height:50vh; }
 .hero__inner--curriculo{ padding-top:3rem; padding-bottom:3rem; }
 .hero__portrait{
   position:absolute; right:6%; top:50%; transform:translateY(-50%);
