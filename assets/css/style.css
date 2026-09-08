@@ -192,13 +192,13 @@ h3{ font-size:1.6rem; }
 .hero__eyebrow{
   font-family:var(--font-display); font-weight:500; text-transform:uppercase;
   letter-spacing:normal;
-  color:var(--ink); font-size:1.5rem; margin-bottom:.6rem; display:block;
+  color:var(--ink); font-size:1.5rem; margin-bottom:.25rem; display:block;
 }
-.hero h1{ font-family:var(--font-heading); font-weight:500; font-size:clamp(2.2rem, 4.5vw, 3.5rem); color:var(--ink); }
-.hero h1.hero__title--jumbo{ font-weight:700; font-size:clamp(3.5rem, 9vw, 6.5rem); line-height:1; margin-bottom:1.25rem; }
+.hero h1{ font-family:var(--font-heading); font-weight:500; font-size:clamp(2.2rem, 4.5vw, 3.5rem); color:var(--ink); margin-bottom:.5rem; }
+.hero h1.hero__title--jumbo{ font-weight:700; font-size:clamp(3.5rem, 9vw, 6.5rem); line-height:1; margin-bottom:.5rem; }
 .hero__eyebrow--big{ font-size:1.75rem; }
 .hero .lede{
-  font-family:var(--font-heading); font-size:1.1rem; font-weight:700; color:#fff; max-width:44ch;
+  font-family:var(--font-heading); font-size:1.3rem; font-weight:400; color:#fff; max-width:44ch;
 }
 .hero p{ font-family:var(--font-body); font-size:1.02rem; color:#fff; }
 
